@@ -30,11 +30,11 @@
     </clipboard-copy>
   </div></div>
   <h2>ERD 다이어그램</h2>
-  ![image](https://user-images.githubusercontent.com/91714677/197436012-be135c4d-2a8b-4344-a15b-4cd229de7deb.png)
+  ![image](https://user-images.githubusercontent.com/91714677/197436012-be135c4d-2a8b-4344-a15b-4cd229de7deb.png)<br>
  ![image](https://user-images.githubusercontent.com/91714677/197436176-11ad3714-7c00-4a4d-94ed-c82f3a893f13.png)
  
  <h2>구동 화면</h2>
- - 메인페이지
+ - 메인 화면
  
  - 자격증 정보
  
