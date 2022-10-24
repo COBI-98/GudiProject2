@@ -15,10 +15,9 @@
 # 프로젝트 설계
 
 <h2>목적</h2>
-----
 <div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>* 자격증을 공부하기위해 정보를 얻고 싶은 취준생들을 위한 사이트이다.
-</code><br>><code>* 자신이 원하는 자격증을 검색하여 교재,동영상,관심있는 자격증을 등록할 수 있고, 홈페이지에 시험 d-day를 확인하도록 도와준다.
-</code><br>><code>* 회원들끼리 정보를 공유할 수 있으며, 가까운 지역의 스터디카페를 추천해준다.
+</code><br><code>* 자신이 원하는 자격증을 검색하여 교재,동영상,관심있는 자격증을 등록할 수 있고, 홈페이지에 시험 d-day를 확인하도록 도와준다.
+</code><br><code>* 회원들끼리 정보를 공유할 수 있으며, 가까운 지역의 스터디카페를 추천해준다.
 </code>
 </pre><div class="zeroclipboard-container position-absolute right-0 top-0">
     <clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="* 여기 " tabindex="0" role="button" style="display: none;">
