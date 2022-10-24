@@ -30,8 +30,9 @@
     </clipboard-copy>
   </div></div>
   <h2>ERD 다이어그램</h2>
-  ![image](https://user-images.githubusercontent.com/91714677/197436012-be135c4d-2a8b-4344-a15b-4cd229de7deb.png)<br>
- ![image](https://user-images.githubusercontent.com/91714677/197436176-11ad3714-7c00-4a4d-94ed-c82f3a893f13.png)
+  <img width="653" alt="erd1" src="https://user-images.githubusercontent.com/91714677/197436511-c3cdb0ff-000d-4ffc-bcbe-5c9962445ecc.png">
+<img width="533" alt="erd2" src="https://user-images.githubusercontent.com/91714677/197436523-6ea4ff68-f110-4969-9677-6e3cafabe880.png">
+
  
  <h2>구동 화면</h2>
  - 메인 화면
