@@ -155,14 +155,8 @@ public class LicenseMembersController {
 		
 	    int result = licenseMembersService.setJoin(licenseMembersDTO);
 	    licenseMembersService.setRole(licenseMembersDTO);
-	    System.out.println(licenseMembersDTO.getUserName());
 	    
-	    System.out.println(result);
-		if(result > 0) {
-				System.out.println("성공");
-		}else {
-				System.out.println("실패");
-		}
+	   
 		
 		
 			
@@ -451,14 +445,14 @@ public class LicenseMembersController {
 	@RequestMapping(value="/oauth2/authorization/kakao")
     public String kakaoLogin() throws Exception {
         StringBuffer loginUrl = new StringBuffer();
-        loginUrl.append("https://kauth.kakao.com/oauth/authorize?client_id=");
+        loginUrl.append("https://kauth.kakao.com/oauth/authorize?
+			_id=");
         loginUrl.append("`clientid`"); 
         loginUrl.append("&redirect_uri=");
         loginUrl.append("`kakao_callback`"); 
         loginUrl.append("&response_type=code");
         System.out.println("test0 : "+loginUrl.toString());
         return "redirect:"+loginUrl.toString();
-        // ?client_id=jHUXCDEEtc8_uaRSgjoW&redirect_uri=http://localhost:8080/member/naver_callback&response_type=code
     }
 	
 
@@ -473,7 +467,6 @@ public class LicenseMembersController {
         loginUrl.append("&response_type=code");
         System.out.println("test0 : "+loginUrl.toString());
         return "redirect:"+loginUrl.toString();
-        // https://nid.naver.com/oauth2.0/authorize?client_id=jHUXCDEEtc8_uaRSgjoW&redirect_uri=http://localhost:8080/member/naver_callback&response_type=code
     }
 	
 	
@@ -496,11 +489,6 @@ public class LicenseMembersController {
             	
             	int result1 = licenseMembersService.setSimpleJoin(simpleMembersDTO);
             	
-            	if(result1>0) {
-            		System.out.println("성공");
-            	}else {
-            		System.out.println("실패");
-            	}
             }
             mv.setViewName("redirect:/");
 
