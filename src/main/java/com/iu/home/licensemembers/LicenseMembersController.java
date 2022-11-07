@@ -378,13 +378,10 @@ public class LicenseMembersController {
 		LicenseMembersDTO licenseMembersDTO = new LicenseMembersDTO();
 		licenseMembersDTO.setEmail(email);
 		licenseMembersDTO = licenseMembersService.getFindId(licenseMembersDTO);
-	    System.out.println(licenseMembersDTO);
-	    System.out.println(licenseMembersDTO.getUserName());
-	    System.out.println(email);
+
 	    if(licenseMembersDTO != null) {
 	        mailService.sendUsernames(email, licenseMembersDTO);
 	    }
-	    System.out.println("나왔다.");
 	    return new ResponseEntity<Object>(HttpStatus.OK);
 	}
 	
@@ -395,9 +392,6 @@ public class LicenseMembersController {
 		licenseMembersDTO.setEmail(email);
 		String result = "0";
 		licenseMembersDTO = licenseMembersService.getFindId(licenseMembersDTO);
-	    System.out.println(licenseMembersDTO);
-	    System.out.println(licenseMembersDTO.getUserName());
-	    System.out.println(email);
 	    
 	    if(licenseMembersDTO.getUserName() != null) {
 	    	result = "1";
@@ -417,7 +411,6 @@ public class LicenseMembersController {
 	    
 	    session.setMaxInactiveInterval(300);
 	    session.setAttribute("authStatus", authStatus);
-	    System.out.println("테스트1"+authStatus);
 	    return new ResponseEntity<Object>(username, HttpStatus.OK);
 	}
 	
@@ -459,9 +452,9 @@ public class LicenseMembersController {
     public String kakaoLogin() throws Exception {
         StringBuffer loginUrl = new StringBuffer();
         loginUrl.append("https://kauth.kakao.com/oauth/authorize?client_id=");
-        loginUrl.append("c7ce88367515391bad76eec48ec49f1a"); 
+        loginUrl.append("`clientid`"); 
         loginUrl.append("&redirect_uri=");
-        loginUrl.append("http://localhost:8080/member/kakao_callback"); 
+        loginUrl.append("`kakao_callback`"); 
         loginUrl.append("&response_type=code");
         System.out.println("test0 : "+loginUrl.toString());
         return "redirect:"+loginUrl.toString();
@@ -474,7 +467,7 @@ public class LicenseMembersController {
 	public String naverLogin() throws Exception {
         StringBuffer loginUrl = new StringBuffer();
         loginUrl.append("https://nid.naver.com/oauth2.0/authorize?client_id=");
-        loginUrl.append("jHUXCDEEtc8_uaRSgjoW"); 
+        loginUrl.append("client_id"); 
         loginUrl.append("&redirect_uri=");
         loginUrl.append("http://localhost:8080/member/naver_callback"); 
         loginUrl.append("&response_type=code");
@@ -487,7 +480,6 @@ public class LicenseMembersController {
 	
 	@RequestMapping(value = "kakao_callback", method = RequestMethod.GET)
     public ModelAndView redirectkakao(@RequestParam String code, HttpSession session) throws Exception {
-            System.out.println("test 11111 : " + code);
             ModelAndView mv = new ModelAndView();
             //접속토큰 get
             String kakaoToken = kakaoService.getReturnAccessToken(code);
@@ -511,14 +503,7 @@ public class LicenseMembersController {
             	}
             }
             mv.setViewName("redirect:/");
-            //            LicenseMembersDTO licenseMembersDTO =new LicenseMembersDTO();
-//            licenseMembersDTO.setName((String)result.get("nickname"));
-//            licenseMembersDTO.setEmail((String)result.get("email"));
-//            System.out.println(licenseMembersDTO.getName());
-//            System.out.println(licenseMembersDTO.getEmail());
-//            
-//            mv.setViewName("redirect:/");
-//            
+
             session.setAttribute("sessionConfigVO", simpleMembersDTO);
             /*로그아웃 처리 시, 사용할 토큰 값*/
             session.setAttribute("kakaoToken", kakaoToken);
@@ -606,7 +591,6 @@ public class LicenseMembersController {
 	
 	@RequestMapping(value = "naver_callback", method = RequestMethod.GET)
     public ModelAndView redirectnaver(@RequestParam String code, HttpSession session) throws Exception {
-            System.out.println("test 11111  : " + code);
             ModelAndView mv = new ModelAndView();
             //접속토큰 get
             String naverToken = naverService.getReturnAccessToken(code);
