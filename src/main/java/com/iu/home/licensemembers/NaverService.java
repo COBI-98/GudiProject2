@@ -41,8 +41,8 @@ public class NaverService {
             System.out.println("sb 1 : " + sb);
             System.out.println("code 0  :" + code);
             sb.append("grant_type=authorization_code");
-            sb.append("&client_id=jHUXCDEEtc8_uaRSgjoW");  //앱 KEY VALUE
-            sb.append("&client_secret=i6kcJr8sAr"); 
+            sb.append("&client_id=`key_value`");  //앱 KEY VALUE
+            sb.append("&client_secret=`secret_value`"); 
             sb.append("&redirect_uri=http://localhost:8080/member/naver_callback"); // 앱 CALLBACK 경로
             sb.append("&code=" + code);
             System.out.println("sb 2 : " + sb);
